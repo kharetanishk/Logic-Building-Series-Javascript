@@ -14,6 +14,16 @@ const countVowels = (string) => {
   return counter;
 };
 
-console.log(countVowels("hello world"));
+console.log(countVowels("aeiou"));
 
 countVowels("hello world");
+
+//Reverse a sentence
+
+function reverseString(string) {
+  const reverseArray = [...string].reverse();
+  return reverseArray.join("");
+}
+
+console.log(reverseString("Hello world"));
+console.log(reverseString("TERI MAA KI CHUT"));
