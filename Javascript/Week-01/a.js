@@ -59,3 +59,41 @@ sumEven = (...args) => {
 };
 
 console.log(sumEven(1, 10, 22, 11, 100));
+
+//write a function to find first non repeating character
+
+function findNonrepeatingCharacter(string) {
+  const obj = {};
+  const finaloutput = [];
+  for (const char of string) {
+    obj[char] = (obj[char] || 0) + 1;
+  }
+
+  for (const [key, val] of Object.entries(obj)) {
+    if (val === 1) {
+      finaloutput.push(key);
+    }
+  }
+  return finaloutput.toString();
+}
+console.log(findNonrepeatingCharacter("abbcc"));
+
+//using map
+
+nonrep = (s) => {
+  const map = new Map();
+  const result = [];
+
+  for (const c of s) {
+    map.set(c, (map.get(c) || 0) + 1);
+  }
+
+  for (let [key, val] of map) {
+    if (val === 1) {
+      result.push(key);
+    }
+  }
+  return result.toString();
+};
+
+console.log(nonrep("zaabbc"));
