@@ -10,26 +10,21 @@ const countVowels = (string) => {
       counter++;
     }
   }
-
   return counter;
 };
 
 console.log(countVowels("aeiou"));
-
 countVowels("hello world");
 
 //Reverse a sentence
-
 function reverseString(string) {
-  const reverseArray = [...string].reverse();
-  return reverseArray.join("");
+  const reverseArray = [...string].reverse().join("");
+  return reverseArray;
 }
-
 console.log(reverseString("Hello world"));
 console.log(reverseString("TERI MAA KI CHUT"));
 
 //find the missing number
-
 missingNumber = (...args) => {
   let actualSum = 0;
   const sortedNum = args.sort(function (a, b) {
@@ -47,3 +42,20 @@ missingNumber = (...args) => {
 };
 
 console.log(missingNumber(1, 2, 4, 5));
+
+//sum of only even number inside an array
+
+sumEven = (...args) => {
+  const evenNum = [];
+
+  for (let arg of args) {
+    if (arg % 2 === 0) {
+      evenNum.push(parseInt(arg));
+    }
+  }
+
+  const sum = evenNum.reduce((acc, x) => (acc += x), 0);
+  return sum;
+};
+
+console.log(sumEven(1, 10, 22, 11, 100));
