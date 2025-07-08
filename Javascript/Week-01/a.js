@@ -97,3 +97,35 @@ nonrep = (s) => {
 };
 
 console.log(nonrep("zaabbc"));
+
+//Write a function sameElements(arr1, arr2) that returns
+// true if both arrays contain the same elements with the same
+// frequency, regardless of order.
+
+function sameElements(arr1, arr2) {
+  if (arr1.length !== arr2.length) return false;
+  const map1 = {};
+  const map2 = {};
+  const res = [];
+  for (let int1 of arr1) {
+    map1[int1] = (map1[int1] || 0) + 1;
+  }
+  for (let int2 of arr2) {
+    map2[int2] = (map2[int2] || 0) + 1;
+  }
+
+  for (let key in map1) {
+    const val1 = map1[key];
+    const val2 = map2[key];
+
+    if (val1 !== val2) {
+      return false;
+    }
+  }
+  return true;
+}
+
+let arr1 = [3, 2, 1];
+let arr2 = [1, 2, 3];
+
+console.log(sameElements(arr1, arr2));
