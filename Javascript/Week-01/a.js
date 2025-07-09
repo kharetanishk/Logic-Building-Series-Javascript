@@ -129,3 +129,39 @@ let arr1 = [3, 2, 1];
 let arr2 = [1, 2, 3];
 
 console.log(sameElements(arr1, arr2));
+
+// Write a function isAnagram(str1, str2) that returns
+// true if both strings contain the same characters with
+//  the same frequency, else returns false.
+
+function isAnagram(strng1, strng2) {
+  //initially it will check the number of character in each string if not equal then no anagram
+  const validString1 = strng1.toLowerCase().replace(/\s+/g, "");
+  const validString2 = strng2.toLowerCase().replace(/\s+/g, "");
+
+  console.log(`${validString1} ${validString2}`);
+
+  if (validString1.length !== validString2.length) return false;
+
+  const mappingStr1 = new Map();
+  const mappingStr2 = new Map();
+
+  for (const char of validString1) {
+    mappingStr1.set(char, (mappingStr1.get(char) || 0) + 1);
+  }
+
+  for (const char1 of validString2) {
+    mappingStr2.set(char1, (mappingStr2.get(char1) || 0) + 1);
+  }
+
+  for (let [key, val] of mappingStr1.entries()) {
+    const val1 = mappingStr2.get(key);
+    if (val !== val1) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(isAnagram("    ta  nu", "t  an   u   ")); //true
+console.log(isAnagram("listen", "listenn")); //false
