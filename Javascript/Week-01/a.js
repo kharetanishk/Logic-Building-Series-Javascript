@@ -191,3 +191,45 @@ function hasPairWithSum(arr, target) {
   return false;
 }
 console.log(hasPairWithSum([1, 2, 3, 4, 5], 188));
+
+// Write a function longestWord(sentence) that returns the longest word in a sentence.
+//this is my logic
+function longestWord(sentence) {
+  const sen = sentence.split(" ");
+  let arrayOf = [];
+
+  for (let i = 0; i < sen.length; i++) {
+    arrayOf.push(sen[i].length);
+  }
+  const maxLen = Math.max(...arrayOf);
+
+  function filter(arr, value) {
+    return arr.filter((s) => s.length === value);
+  }
+
+  return filter(sen, maxLen).toString();
+}
+console.log(longestWord("hello my name is tanishk khare"));
+
+//_________________________
+function islonger(sentence) {
+  const words = sentence.split(" ");
+  const maxLen = Math.max(...words.map((e) => e.length));
+  return words.filter((e) => e.length === maxLen).toString();
+}
+
+console.log(islonger("hello my name is tanishk khare"));
+
+//___________________\
+function islongeset(sentence) {
+  const words = sentence.split(" ");
+  let longest = "";
+
+  for (let word of words) {
+    if (word.length > longest.length) {
+      longest = word;
+    }
+  }
+  return longest;
+}
+console.log(islongeset("hello my name is tanishk khare"));
