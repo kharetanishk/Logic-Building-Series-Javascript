@@ -165,3 +165,29 @@ function isAnagram(strng1, strng2) {
 
 console.log(isAnagram("    ta  nu", "t  an   u   ")); //true
 console.log(isAnagram("listen", "listenn")); //false
+
+// Write a function hasPairWithSum(arr, target) that returns true if
+//  any two numbers in the array sum up to the target.
+
+function hasPairWithSum(arr, target) {
+  arr.sort((a, b) => a - b);
+
+  //these are pointers which will move inside array
+  let start = 0; //index -0
+  let end = arr.length - 1; //suppose it has index 4
+
+  while (start < end) {
+    // 0<4
+    const sum = arr[start] + arr[end]; //arr[0] + arr[4] e.g here it is 1+5 = 6 so not equal to target
+    if (sum === target) {
+      return true;
+    } else if (sum < target) {
+      //sum is 6 <7 so the array need to move right next is 2 + 5 =7 thus sum === target returns true
+      start++;
+    } else {
+      end--; //suppose if sum was 8 at very first then it needs to move left
+    }
+  }
+  return false;
+}
+console.log(hasPairWithSum([1, 2, 3, 4, 5], 188));
