@@ -233,3 +233,27 @@ function islongeset(sentence) {
   return longest;
 }
 console.log(islongeset("hello my name is tanishk khare"));
+
+//Write a function factorial(n) that returns the factorial of a number using recursion.
+
+function factorial(n) {
+  //base case
+  if (n === 0 || n === 1) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+console.log(factorial(5));
+
+//Write a function reverseString(str) that returns the reversed string using recursion.
+
+//my logic
+function reverseString(str) {
+  const result = [];
+  for (let i = 0; i < str.length; i++) {
+    result.push(str[str.length - 1 - i]);
+  }
+  return result.join("");
+}
+console.log(reverseString("tanishk"));
