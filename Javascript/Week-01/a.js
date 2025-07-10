@@ -257,3 +257,14 @@ function reverseString(str) {
   return result.join("");
 }
 console.log(reverseString("tanishk"));
+
+//using recursion
+
+function reverse(str) {
+  if (str.length <= 1) return str;
+  console.log(str[1] + " " + "ldkajfld");
+
+  return reverse(str.slice(1)) + str[0];
+}
+
+console.log(reverse("hello"));
