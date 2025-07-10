@@ -268,3 +268,53 @@ function reverse(str) {
 }
 
 console.log(reverse("hello"));
+
+//Write a function isPalindrome(str) that returns true if the string is
+// a palindrome (same forward and backward), ignoring spaces and case.
+
+function isPalindrome(str) {
+  if (str.length <= 1) {
+    return true;
+  }
+  //its not possible for a pallindrome to have an even length
+  if (str.length % 2 === 0) {
+    return false;
+  }
+
+  const string = str.toLowerCase().replace(/\s+/g, "");
+
+  const middleValue = (string.length + 1) / 2;
+  // console.log(middleValue);
+
+  const str1 = string.slice(0, middleValue - 1);
+  // console.log(str1);
+  const str2 = string.slice(middleValue);
+  // console.log(str2);
+
+  const reversedString = str1.split("").reverse().join("");
+
+  if (reversedString === str2) {
+    return true;
+  }
+  return false;
+}
+
+console.log(isPalindrome("madam"));
+
+//using recurss=ion
+
+function findPallindrome(string) {
+  const clearString = string.replace(/\s+g/, "");
+
+  function checkPallindrome(s) {
+    if (s.length <= 1) {
+      return true;
+    }
+    if (s[0] !== s[s.length - 1]) return false;
+
+    return checkPallindrome(s.slice(1, s.length - 1));
+  }
+  return checkPallindrome(clearString);
+}
+
+console.log(findPallindrome("madam"));
