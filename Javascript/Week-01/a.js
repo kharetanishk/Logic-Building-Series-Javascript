@@ -318,3 +318,31 @@ function findPallindrome(string) {
 }
 
 console.log(findPallindrome("madam"));
+
+// Theme: Two-Pointer Pattern
+//Problem 1: hasPairWithSum()
+// Write a function hasPairWithSum(arr, target)
+// that returns true if any two numbers in a sorted array sum to the target.
+
+function haspairedSUm(arr, target) {
+  const sortedArray = arr.sort(function (a, b) {
+    return a - b;
+  });
+  console.log(sortedArray);
+  let start = 0;
+  let end = sortedArray.length - 1;
+
+  while (start < end) {
+    const sum = sortedArray[start] + sortedArray[end];
+
+    if (sum === target) {
+      return true;
+    } else if (sum < target) {
+      start++;
+    } else {
+      end--;
+    }
+  }
+  return false;
+}
+console.log(haspairedSUm([1, 2, 3, 4, 1], 3));
