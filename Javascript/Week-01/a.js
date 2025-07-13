@@ -346,3 +346,28 @@ function haspairedSUm(arr, target) {
   return false;
 }
 console.log(haspairedSUm([1, 2, 3, 4, 1], 3));
+
+//Check if all characters in str1 appear in order (not necessarily contiguous) inside str2.\
+
+function isSubsequence(str1, str2) {
+  let i = 0;
+  let j = 0;
+
+  console.log(str2.length);
+
+  while (j < str2.length) {
+    //0<19
+    console.log(str1[i]);
+    console.log(str2[j]);
+    if (str1[i] === str2[j]) {
+      i++;
+      console.log(`${i} console.log i`);
+    } else if (i === str1.length) {
+      return true;
+    }
+    j++;
+  }
+  return false;
+}
+
+console.log(isSubsequence("hello", "hajldfjldelrjeljllo"));
