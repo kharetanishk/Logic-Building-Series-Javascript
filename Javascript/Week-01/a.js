@@ -371,3 +371,7 @@ function isSubsequence(str1, str2) {
 }
 
 console.log(isSubsequence("hello", "hajldfjldelrjeljllo"));
+
+//this file is for pracctice it do contain all the intervieew practice questions
+//this file is js based
+//.
