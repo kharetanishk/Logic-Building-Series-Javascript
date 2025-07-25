@@ -396,3 +396,37 @@ promise
   .catch((err) => {
     console.log(`REJECTED : ${err}`);
   });
+
+//promise chaining
+
+const firstask = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("first task done");
+    }, 1000);
+  });
+};
+
+const secondtask = (msg) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(`${msg}` + " " + " -> Second task done");
+    }, 1000);
+  });
+};
+
+firstask()
+  .then((res1) => {
+    console.log(res1);
+    return secondtask(res1);
+  })
+  .then((res2) => {
+    console.log(res2);
+    return secondtask(res2);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+//output
+// first task done
+// first task done  -> Second task done
