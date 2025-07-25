@@ -380,8 +380,19 @@ console.log(isSubsequence("hello", "hajldfjldelrjeljllo"));
 //creating a promise
 
 const promise = new Promise((resolve, reject) => {
-  resolve("hello world");
+  const success = true;
+
+  if (success) {
+    resolve("it worked");
+  } else {
+    reject("something went wrong");
+  }
 });
-promise.then((value) => {
-  console.log(value);
-});
+
+promise
+  .then((value) => {
+    console.log(`RESOLVED : ${value}`);
+  })
+  .catch((err) => {
+    console.log(`REJECTED : ${err}`);
+  });
