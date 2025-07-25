@@ -375,3 +375,13 @@ console.log(isSubsequence("hello", "hajldfjldelrjeljllo"));
 //this file is for pracctice it do contain all the intervieew practice questions
 //this file is js based
 //.
+//
+
+//creating a promise
+
+const promise = new Promise((resolve, reject) => {
+  resolve("hello world");
+});
+promise.then((value) => {
+  console.log(value);
+});
