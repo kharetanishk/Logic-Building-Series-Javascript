@@ -67,3 +67,42 @@ arraydemo.forEach((num, idx) => {
 // 12 has this index - 4
 // 534 has this index - 5
 // 66 has this index - 6
+
+//Use for...of to loop through "loopmaster" and print each character.
+
+const word = "loopmaster";
+for (let letter of word) {
+  console.log(letter);
+}
+
+//Use for...in to loop through this object:
+const laptop = { brand: "HP", ram: "16GB", ssd: "1TB" };
+
+for (let key in laptop) {
+  console.log(`${key} of ${laptop[key]}`);
+}
+
+// Problem 1: Sum of Even Numbers in an Array
+
+const arr = [5, 12, 8, 3, 17, 6];
+const evenNum = [];
+let sum = 0;
+
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] % 2 == 0) {
+    evenNum.push(arr[i]);
+  }
+}
+evenNum.forEach((x) => {
+  sum += x;
+});
+console.log(sum);
+
+///or
+
+for (let num of arr) {
+  if (num % 2 === 0) {
+    num += sum;
+  }
+}
+console.log(sum);
