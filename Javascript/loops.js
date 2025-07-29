@@ -106,3 +106,17 @@ for (let num of arr) {
   }
 }
 console.log(sum);
+
+//Problem 2: Count vowels in a string
+const input = "javascript is power";
+const vowels = ["a", "e", "i", "o", "u"];
+let count1 = 0;
+
+for (letter of input) {
+  vowels.forEach((vowel) => {
+    if (letter === vowel) {
+      count1++;
+    }
+  });
+}
+console.log(count1);
