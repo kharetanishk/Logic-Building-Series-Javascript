@@ -167,3 +167,15 @@ for (let val of arr2) {
     console.log("loops run upto" + " " + val);
   }
 }
+
+//Mini Project: Frequency Counter
+//Use a loop to count how many times each letter occurs
+// Store in an object (like a dictionary)
+
+const word = "mississippi";
+
+let obj = {};
+for (let x of word) {
+  obj[x] = (obj[x] || 0) + 1;
+}
+console.log(obj);
