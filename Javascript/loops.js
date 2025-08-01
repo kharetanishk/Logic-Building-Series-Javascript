@@ -180,4 +180,16 @@ for (let x of word) {
 }
 console.log(obj);
 
-console.log(JSON.stringify(data));
+// console.log(JSON.stringify(data));
+
+//array
+
+const things = ["bat ", "ball", "laptop", "pencil"];
+
+function callingThings(things) {
+  for (let thing of things) {
+    console.log(thing);
+  }
+}
+
+callingThings(things);
