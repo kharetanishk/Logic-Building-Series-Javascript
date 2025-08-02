@@ -210,3 +210,17 @@ let objecct = {
 console.log(objecct);
 objecct["name"] = "sahil";
 console.log(objecct);
+
+const unique = new Set([
+  "ram",
+  "ram",
+  "ram",
+  "tanu",
+  "tanu",
+  "raju",
+  "rani",
+  "rani",
+  "rani",
+]);
+console.log(unique);
+//set store unique values and remove duplicate values
