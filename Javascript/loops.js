@@ -193,3 +193,20 @@ function callingThings(things) {
 }
 
 callingThings(things);
+
+const x = "helloworld";
+const obj1 = {};
+for (let y of x) {
+  obj1[y] = (obj1[y] || 0) + 1;
+  console.log(`${obj1[y]} hello world`);
+}
+
+console.log(obj1);
+
+let objecct = {
+  name: "tanishk",
+  age: "21",
+};
+console.log(objecct);
+objecct["name"] = "sahil";
+console.log(objecct);
