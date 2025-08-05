@@ -40,3 +40,23 @@ function summing(nums, target) {
 const array = [6, 1, 3, 5];
 const target = 9;
 console.log(summing(array, target));
+
+//Given an array of integers, return true if any value appears at
+// least twice in the array, and false if every element is distinct.
+
+function countarray(arr) {
+  const obj = {};
+
+  for (let num of arr) {
+    obj[num] = (obj[num] || 0) + 1;
+  }
+  for (let num in obj) {
+    if (obj[num] >= 2) {
+      return true;
+    }
+  }
+  return false;
+}
+
+const numbers = [1, 3, 2, 4, 9];
+console.log(countarray(numbers));
