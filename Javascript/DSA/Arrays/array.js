@@ -58,5 +58,23 @@ function countarray(arr) {
   return false;
 }
 
-const numbers = [1, 3, 2, 4, 9];
+const numbers = [1, 3, 2, 4, 9, 1];
 console.log(countarray(numbers));
+
+// const set = new Set([1, 1, 2, 3, 4, 1, 2]);
+// console.log(set);
+
+//same logic using sets
+
+function findDuplicate(array) {
+  const set = new Set();
+
+  for (let num of array) {
+    if (set.has(num)) return true;
+    set.add(num);
+  }
+
+  return false;
+}
+
+console.log(findDuplicate(numbers));
