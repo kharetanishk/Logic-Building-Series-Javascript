@@ -39,7 +39,7 @@ function summing(nums, target) {
 
 const array = [6, 1, 3, 5];
 const target = 9;
-console.log(summing(array, target));
+// console.log(summing(array, target));
 
 //Problem 2
 //Given an array of integers, return true if any value appears at
@@ -59,8 +59,8 @@ function countarray(arr) {
   return false;
 }
 
-const numbers = [1, 3, 2, 4, 9, 1];
-console.log(countarray(numbers));
+// const numbers = [1, 3, 2, 4, 9, 1];
+// console.log(countarray(numbers));
 
 //same logic using sets
 
@@ -75,4 +75,34 @@ function findDuplicate(array) {
   return false;
 }
 
-console.log(findDuplicate(numbers));
+// console.log(findDuplicate(numbers));
+
+//roblem 3: Valid Anagram
+// Description:
+// Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+function validAnagram(s, t) {
+  if (s.length !== t.length) return false;
+
+  const map1 = {};
+  const map2 = {};
+
+  for (let letter of s) {
+    map1[letter] = (map1[letter] || 0) + 1;
+  }
+
+  for (let letter of t) {
+    map2[letter] = (map2[letter] || 0) + 1;
+  }
+
+  console.log(map1, map2);
+
+  for (let key in map1) {
+    console.log(map1[key], map2[key]);
+    if (map1[key] !== map2[key]) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log(validAnagram("anut", "tanu"));
