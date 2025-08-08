@@ -41,6 +41,7 @@ const array = [6, 1, 3, 5];
 const target = 9;
 console.log(summing(array, target));
 
+//Problem 2
 //Given an array of integers, return true if any value appears at
 // least twice in the array, and false if every element is distinct.
 
@@ -60,9 +61,6 @@ function countarray(arr) {
 
 const numbers = [1, 3, 2, 4, 9, 1];
 console.log(countarray(numbers));
-
-// const set = new Set([1, 1, 2, 3, 4, 1, 2]);
-// console.log(set);
 
 //same logic using sets
 

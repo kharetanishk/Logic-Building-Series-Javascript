@@ -224,3 +224,5 @@ const unique = new Set([
 ]);
 console.log(unique);
 //set store unique values and remove duplicate values
+const minute = Math.floor(60 % 3600);
+console.log(minute);

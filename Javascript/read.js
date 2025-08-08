@@ -10,5 +10,3 @@ async function readData() {
     console.log(err);
   }
 }
-
-readData();
