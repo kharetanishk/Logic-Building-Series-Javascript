@@ -81,28 +81,19 @@ function findDuplicate(array) {
 // Description:
 // Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 
-function validAnagram(s, t) {
-  if (s.length !== t.length) return false;
+function findAna(str) {
+  const map = {};
+  for (let word of str) {
+    const sorted = word.split("").sort().join("");
+    // console.log(sorted);
 
-  const map1 = {};
-  const map2 = {};
-
-  for (let letter of s) {
-    map1[letter] = (map1[letter] || 0) + 1;
-  }
-
-  for (let letter of t) {
-    map2[letter] = (map2[letter] || 0) + 1;
-  }
-
-  console.log(map1, map2);
-
-  for (let key in map1) {
-    console.log(map1[key], map2[key]);
-    if (map1[key] !== map2[key]) {
-      return false;
+    if (!map[sorted]) {
+      map[sorted] = [];
     }
+
+    map[sorted].push(word);
   }
-  return true;
+
+  return Object.values(map);
 }
-console.log(validAnagram("anut", "tanu"));
+console.log(findAna(["hello", "tea", "ate"]));
