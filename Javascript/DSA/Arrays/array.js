@@ -20,7 +20,7 @@ function twoSum(nums, target) {
 }
 const ar = [5, 2, 1, 6];
 const tr = 3;
-console.log(twoSum(ar, tr));
+// console.log(twoSum(ar, tr));
 
 //again
 function summing(nums, target) {
@@ -127,4 +127,25 @@ function groupAnagrams(strs) {
   return Object.values(map);
 }
 
-console.log(groupAnagrams(["tea", "ate"]));
+// console.log(groupAnagrams(["tea", "ate"]));
+
+// Problem 5 – Top K Frequent Elements
+// Difficulty: Medium
+// Topic: Hash Map + Sorting / Bucket Sort
+
+// Description
+// Given an integer array nums and an integer k, return the k most frequent elements.
+// You may return the answer in any order.
+
+function mostFrequentElements(strofNum) {
+  const map = {};
+
+  //step-1
+  for (let num of strofNum) {
+    map[num] = (map[num] || 0) + 1;
+  }
+
+  //step-2
+}
+
+console.log(mostFrequentElements([1, 2, 3, 3, 2, 1, 4]));
