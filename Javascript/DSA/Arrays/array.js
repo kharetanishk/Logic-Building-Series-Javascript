@@ -137,15 +137,28 @@ function groupAnagrams(strs) {
 // Given an integer array nums and an integer k, return the k most frequent elements.
 // You may return the answer in any order.
 
-function mostFrequentElements(strofNum) {
+function mostfrequentElement(strOfNum) {
+  //step -1 count the frequency and map the frequency
   const map = {};
-
-  //step-1
-  for (let num of strofNum) {
+  for (let num of strOfNum) {
     map[num] = (map[num] || 0) + 1;
   }
 
-  //step-2
+  //step-2 push the key-value pair inside an array so that we can sort and more..
+  const bucket = [];
+  for (let key in map) {
+    bucket.push([key, map[key]]);
+  }
+
+  //step-3 sorting the values in descending order
+  bucket.sort((a, b) => b[1] - a[1]);
+
+  //step-4 slice the first two most frequent elements which we consider k
+  // here and return the keys or the real values
+
+  const k = 2;
+  const result = bucket.slice(0, k).map((item) => Number(item[0]));
+  return result;
 }
 
-console.log(mostFrequentElements([1, 2, 3, 3, 2, 1, 4]));
+console.log(mostfrequentElement([1, 2, 2, 3, 3, 4]));
