@@ -162,3 +162,31 @@ function mostfrequentElement(strOfNum) {
 }
 
 console.log(mostfrequentElement([1, 2, 2, 3, 3, 4]));
+
+//Problem 6: Valid Parentheses
+// Description:
+// Given a string s containing just the characters '(', ')', '{', '}', '[', and ']', determine if the input string is valid.
+// A string is valid if:
+// Open brackets must be closed by the same type of brackets.
+// Open brackets must be closed in the correct order.
+
+function isvalidParenthesis(string) {
+  const stack = [];
+  const map = {
+    ")": "(",
+    "]": "[",
+    "}": "{",
+  };
+
+  for (let char of string) {
+    if (map[char]) {
+      const top = stack.pop();
+      if (top !== map[char]) {
+        return false;
+      }
+    } else {
+      stack.push(char);
+    }
+  }
+  return stack.length === 0;
+}
