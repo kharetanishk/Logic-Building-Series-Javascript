@@ -190,3 +190,23 @@ function isvalidParenthesis(string) {
   }
   return stack.length === 0;
 }
+
+// Problem 7: Maximum Subarray (Kadane’s Algorithm)
+// Description:
+// Given an integer array nums, find the contiguous subarray
+// (containing at least one number) which has the largest sum, and return its sum.
+//KADANE'S ALGORITHM
+
+function maxSubarray(arrOfnum) {
+  let currentSum = arrOfnum[0];
+  let maxSum = arrOfnum[0];
+
+  for (let i = 1; i < arrOfnum.length; i++) {
+    let num = arrOfnum[i];
+
+    currentSum = Math.max(num, currentSum + num);
+    maxSum = Math.max(maxSum, currentSum);
+  }
+  return maxSum;
+}
+console.log(maxSubarray([1, 2, 3, -5, -7]));
