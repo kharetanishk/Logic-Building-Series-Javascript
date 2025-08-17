@@ -210,3 +210,19 @@ function maxSubarray(arrOfnum) {
   return maxSum;
 }
 console.log(maxSubarray([1, 2, 3, -5, -7]));
+
+//brute force solution
+function maxSubarrayBrute(nums) {
+  let maxSum = -Infinity;
+
+  for (let i = 0; i < nums.length; i++) {
+    let currentSum = 0;
+
+    for (let j = i; j < nums.length; j++) {
+      currentSum = currentSum + nums[j];
+      maxSum = Math.max(currentSum, maxSum);
+    }
+  }
+  return maxSum;
+}
+console.log(maxSubarrayBrute([1, 2, 3, -5, -6]));
